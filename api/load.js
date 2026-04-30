@@ -3,7 +3,9 @@
 // Loads a saved session from Vercel KV
 // =========================================================
 
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+const kv = Redis.fromEnv();
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

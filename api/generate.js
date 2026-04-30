@@ -4,7 +4,9 @@
 // =========================================================
 
 import Anthropic from '@anthropic-ai/sdk';
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+const kv = Redis.fromEnv();
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 

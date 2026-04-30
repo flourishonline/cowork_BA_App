@@ -3,7 +3,9 @@
 // Saves form progress to Vercel KV
 // =========================================================
 
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+const kv = Redis.fromEnv();
 
 function generateRetrievalCode() {
   const words = [
