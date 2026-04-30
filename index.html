@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Kick Start Generator · Flourish Online</title>
+  <meta name="description" content="Your personalised brand strategy, social bio, content pillars, offer structure, and 90-day plan. Built from your Brand Archetype, tailored to you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       ACCESS GATE VIEW
+       ============================================================ -->
+  <section id="view-gate" class="view active">
+    <div class="gate-inner">
+      <header class="brand-header">
+        <div class="eyebrow">FLOURISH ONLINE</div>
+        <h1 class="display">
+          <span class="display-title">Brand Archetype</span>
+          <em class="display-script">Kick Start Generator</em>
+        </h1>
+        <p class="lede">Your personalised brand strategy, social bio, content pillars, offer structure, and 90-day plan — built from your archetype, tailored completely to you.</p>
+      </header>
+
+      <div class="card">
+        <h2>Enter your access code</h2>
+        <p class="muted">Your access code was emailed to you when you purchased. It looks something like <code>FLOURISH-XXXX</code>.</p>
+        <form id="form-access">
+          <label for="access-code">Access code</label>
+          <input type="text" id="access-code" name="accessCode" placeholder="FLOURISH-XXXX" autocomplete="off" required />
+          <button type="submit" class="btn-primary btn-block">Continue</button>
+          <p id="access-error" class="error" hidden></p>
+        </form>
+
+        <div class="divider"><span>OR</span></div>
+
+        <h3 class="script-subheading">Already started? Load your progress.</h3>
+        <form id="form-load">
+          <label for="retrieval-code">Retrieval code</label>
+          <input type="text" id="retrieval-code" name="retrievalCode" placeholder="e.g. ROSE-WILD-MOON" autocomplete="off" />
+          <button type="submit" class="btn-secondary btn-block">Load my progress</button>
+          <p id="load-error" class="error" hidden></p>
+        </form>
+      </div>
+
+      <footer class="foot">
+        <p>Don't have an access code? <a href="https://www.flourishonline.com.au/services" target="_blank" rel="noopener">Get yours here</a></p>
+      </footer>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FORM VIEW — 7 STEPS
+       ============================================================ -->
+  <section id="view-form" class="view">
+    <div class="container">
+
+      <header class="form-header">
+        <div class="eyebrow">FLOURISH ONLINE · BRAND KICK START</div>
+        <h1>Your Brand Workbook</h1>
+        <p class="muted">Take your time — this is the foundation for everything. Your answers are auto-saved as you go. You can come back to finish later using your retrieval code.</p>
+
+        <!-- 7-step progress bar -->
+        <div class="progress" id="progress-bar">
+          <div class="step-indicator" data-step="1"><span class="step-num">1</span><span class="step-label">Identity</span></div>
+          <div class="step-indicator" data-step="2"><span class="step-num">2</span><span class="step-label">Foundation</span></div>
+          <div class="step-indicator" data-step="3"><span class="step-num">3</span><span class="step-label">Values</span></div>
+          <div class="step-indicator" data-step="4"><span class="step-num">4</span><span class="step-label">Your Weird</span></div>
+          <div class="step-indicator" data-step="5"><span class="step-num">5</span><span class="step-label">Your People</span></div>
+          <div class="step-indicator" data-step="6"><span class="step-num">6</span><span class="step-label">Brand + Offers</span></div>
+          <div class="step-indicator" data-step="7"><span class="step-num">7</span><span class="step-label">Your Story</span></div>
+        </div>
+      </header>
+
+      <form id="form-main" novalidate>
+
+        <!-- ============================================================
+             STEP 1: IDENTITY & ARCHETYPE
+             ============================================================ -->
+        <fieldset class="step step-1 active" data-step="1">
+          <legend class="step-legend">Step 1 · Identity &amp; Archetype</legend>
+
+          <div class="field-group-two">
+            <div class="field">
+              <label for="yourName">Your name <span class="req">*</span></label>
+              <input type="text" id="yourName" name="yourName" required />
+            </div>
+            <div class="field">
+              <label for="businessName">Business name</label>
+              <p class="helper">If different from your name.</p>
+              <input type="text" id="businessName" name="businessName" placeholder="If different from your name" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="whatYouDo">What do you do, in one sentence? <span class="req">*</span></label>
+            <p class="helper">Keep it simple — you'll refine it. Start with "I help…" or "I create…"</p>
+            <textarea id="whatYouDo" name="whatYouDo" rows="2" placeholder="e.g. I help ambitious women build businesses that feel as good as they look." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="archetypeMain">Your primary brand archetype <span class="req">*</span></label>
+            <p class="helper">Not sure? Take the quiz at <a href="https://www.flourishonline.com.au" target="_blank" rel="noopener">flourishonline.com.au</a></p>
+            <select id="archetypeMain" name="archetypeMain" required>
+              <option value="">Choose your primary archetype</option>
+              <option>Adventuress</option>
+              <option>Alchemist</option>
+              <option>Badass</option>
+              <option>Creatress</option>
+              <option>Girl Next Door</option>
+              <option>Heroine</option>
+              <option>Lover</option>
+              <option>Mischief Maker</option>
+              <option>Nurturer</option>
+              <option>Pure Heart</option>
+              <option>Queen</option>
+              <option>Sage</option>
+            </select>
+          </div>
+
+          <div class="field-group-two">
+            <div class="field">
+              <label for="archetypeSecondary">Secondary archetype</label>
+              <p class="helper">Optional — adds nuance.</p>
+              <select id="archetypeSecondary" name="archetypeSecondary">
+                <option value="">None / not sure yet</option>
+                <option>Adventuress</option>
+                <option>Alchemist</option>
+                <option>Badass</option>
+                <option>Creatress</option>
+                <option>Girl Next Door</option>
+                <option>Heroine</option>
+                <option>Lover</option>
+                <option>Mischief Maker</option>
+                <option>Nurturer</option>
+                <option>Pure Heart</option>
+                <option>Queen</option>
+                <option>Sage</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="archetypeShadow">Shadow archetype</label>
+              <p class="helper">Optional — your edge and depth.</p>
+              <select id="archetypeShadow" name="archetypeShadow">
+                <option value="">None / not sure yet</option>
+                <option>Adventuress</option>
+                <option>Alchemist</option>
+                <option>Badass</option>
+                <option>Creatress</option>
+                <option>Girl Next Door</option>
+                <option>Heroine</option>
+                <option>Lover</option>
+                <option>Mischief Maker</option>
+                <option>Nurturer</option>
+                <option>Pure Heart</option>
+                <option>Queen</option>
+                <option>Sage</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <div></div>
+            <button type="button" class="btn-primary" data-next="2">Next: Your Foundation →</button>
+          </div>
+        </fieldset>
+
+
+        <!-- ============================================================
+             STEP 2: FOUNDATION
+             ============================================================ -->
+        <fieldset class="step step-2" data-step="2">
+          <legend class="step-legend">Step 2 · Your Foundation</legend>
+
+          <div class="field">
+            <label for="brandWhy">Your Why <span class="req">*</span></label>
+            <p class="helper">Why does your business exist, beyond making money? What drives you at your core? What do you believe needs to exist in the world?</p>
+            <textarea id="brandWhy" name="brandWhy" rows="4" placeholder="e.g. I believe women have been taught to shrink themselves to be successful. My business exists to prove that's a lie — and to help them build brands that are as big and bold as they actually are." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="brandVision">Your Vision <span class="req">*</span></label>
+            <p class="helper">Where do you want to be in the future? What does success look like in 3–5 years? Paint a picture of the world your brand is helping to create.</p>
+            <textarea id="brandVision" name="brandVision" rows="4" placeholder="e.g. A world where every woman-led business is built on her authentic strengths — not a template designed for someone else." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="brandMission">Your Mission <span class="req">*</span></label>
+            <p class="helper">What are you doing right now, every day, to achieve that vision? Your mission is the work in progress.</p>
+            <textarea id="brandMission" name="brandMission" rows="3" placeholder="e.g. I provide brand strategy, coaching and tools to help women-led service businesses build brands that are rooted in who they actually are." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="beliefs">What do you believe? <span class="req">*</span></label>
+            <p class="helper">Complete these sentences: "I believe…" Write 3–6 bold statements about life, your industry, and your clients. Don't hold back — take a stand.</p>
+            <textarea id="beliefs" name="beliefs" rows="6" placeholder="I believe every woman is already a brand — she just hasn't been given language for it yet.&#10;I believe the most magnetic brands are built on truth, not trends.&#10;I believe strategy without soul is just noise." required></textarea>
+          </div>
+
+          <div class="step-nav">
+            <button type="button" class="btn-secondary" data-back="1">← Back</button>
+            <button type="button" class="btn-primary" data-next="3">Next: Your Values →</button>
+          </div>
+        </fieldset>
+
+
+        <!-- ============================================================
+             STEP 3: VALUES (4 PHASES)
+             ============================================================ -->
+        <fieldset class="step step-3" data-step="3">
+          <legend class="step-legend">Step 3 · Your Values</legend>
+
+          <!-- Phase indicator -->
+          <div class="values-phase-nav">
+            <div class="phase-dot active" data-phase="a"></div>
+            <div class="phase-dot" data-phase="b"></div>
+            <div class="phase-dot" data-phase="c"></div>
+            <div class="phase-dot" data-phase="d"></div>
+            <span class="phase-label" id="phase-label-text">Part 1 of 4: Your own values</span>
+          </div>
+
+          <!-- PHASE A: Add custom values -->
+          <div class="values-phase active" id="values-phase-a">
+            <div class="phase-header">
+              <h3>First — what matters to you in your own words?</h3>
+              <p class="muted">Before you see our list, write down any values that are important to your brand in your own language. These will be added to your personal values pool. You can skip this if you like.</p>
+            </div>
+
+            <div class="field">
+              <label for="custom-value-input">Add a value and press Enter (or comma)</label>
+              <div class="tag-input-wrapper">
+                <div id="custom-tags" class="tag-list"></div>
+                <input type="text" id="custom-value-input" placeholder="e.g. Radical honesty, showing up messy, slow living…" autocomplete="off" />
+              </div>
+              <p class="helper">Press Enter or comma after each value. Click a tag to remove it.</p>
+            </div>
+
+            <div class="phase-nav-btns">
+              <div></div>
+              <button type="button" class="btn-primary" id="btn-phase-a-next">Next: Choose from the full list →</button>
+            </div>
+          </div>
+
+          <!-- PHASE B: Full values grid -->
+          <div class="values-phase" id="values-phase-b">
+            <div class="phase-header">
+              <h3>Now — select everything that feels true for your brand</h3>
+              <p class="muted">Picture your brand as a person. Which of these feel like them? Tick generously — you'll narrow down next. Aim for 15–25 to give yourself room.</p>
+              <div class="selection-counter">
+                <span id="selected-count">0</span> selected
+                <span class="counter-hint">— aim for 15 or more</span>
+              </div>
+            </div>
+
+            <div id="values-grid" class="values-grid">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="phase-nav-btns">
+              <button type="button" class="btn-secondary" id="btn-phase-b-back">← Back</button>
+              <button type="button" class="btn-primary" id="btn-phase-b-next">Next: Pick your top 10 →</button>
+            </div>
+          </div>
+
+          <!-- PHASE C: Narrow to top 10 -->
+          <div class="values-phase" id="values-phase-c">
+            <div class="phase-header">
+              <h3>Narrow it down — pick your top 10</h3>
+              <p class="muted">These are the values you selected. Keep unselecting until you're left with exactly 10. Which ones most define your brand at its best?</p>
+              <div class="selection-counter">
+                <span id="top10-count">0</span> / 10 selected
+                <span class="counter-hint top10-hint" id="top10-hint"> — keep going</span>
+              </div>
+            </div>
+
+            <div id="top10-grid" class="values-grid top10-grid">
+              <!-- Populated by JS from phase B selections -->
+            </div>
+
+            <div class="phase-nav-btns">
+              <button type="button" class="btn-secondary" id="btn-phase-c-back">← Back</button>
+              <button type="button" class="btn-primary" id="btn-phase-c-next">Next: Your 3 core values →</button>
+            </div>
+          </div>
+
+          <!-- PHASE D: Core 3 -->
+          <div class="values-phase" id="values-phase-d">
+            <div class="phase-header">
+              <h3>Finally — your 3 core brand values</h3>
+              <p class="muted">From your top 10, which 3 are the most fundamental? These become your decision-making filter, your brand at its best. They define you.</p>
+              <div class="selection-counter">
+                <span id="core3-count">0</span> / 3 selected
+              </div>
+            </div>
+
+            <div id="core3-grid" class="values-grid core3-grid">
+              <!-- Populated by JS from phase C selections -->
+            </div>
+
+            <!-- Hidden inputs to capture final values for form submission -->
+            <input type="hidden" id="customValuesInput" name="customValues" />
+            <input type="hidden" id="allSelectedValuesInput" name="allSelectedValues" />
+            <input type="hidden" id="top10ValuesInput" name="top10Values" />
+            <input type="hidden" id="core3ValuesInput" name="core3Values" />
+
+            <div class="phase-nav-btns">
+              <button type="button" class="btn-secondary" id="btn-phase-d-back">← Back</button>
+              <button type="button" class="btn-primary" id="btn-phase-d-next">Values locked in! Next: Your Weird →</button>
+            </div>
+          </div>
+
+          <!-- Step back nav (outside phases, hidden unless on phase A) -->
+          <div class="step-back-from-values" id="step-back-values">
+            <button type="button" class="btn-secondary" data-back="2">← Back to Foundation</button>
+          </div>
+        </fieldset>
+
+
+        <!-- ============================================================
+             STEP 4: YOUR WEIRD
+             ============================================================ -->
+        <fieldset class="step step-4" data-step="4">
+          <legend class="step-legend">Step 4 · Your Weird</legend>
+          <p class="step-intro">Your weird is what makes you distinctly, irreplaceably you. This is where we lean into what sets you apart — not smooth it out.</p>
+
+          <div class="field">
+            <label for="uniqueness">What makes you unique? <span class="req">*</span></label>
+            <p class="helper">What do you do, know, or bring that nobody else does in quite the same way? Think about your background, method, perspective, or style.</p>
+            <textarea id="uniqueness" name="uniqueness" rows="4" placeholder="e.g. I combine 15 years of corporate marketing with deep spiritual practice, which means I create strategies that are both razor sharp and deeply aligned. I also swear a lot and think most brand advice is boring." required></textarea>
+          </div>
+
+          <div class="field-group-two">
+            <div class="field">
+              <label for="doList">What you DO <span class="req">*</span></label>
+              <p class="helper">What's in your zone? List what your brand stands for, does well, and offers.</p>
+              <textarea id="doList" name="doList" rows="6" placeholder="Work with ambitious women&#10;Deep strategy conversations&#10;Challenge the brief&#10;Swear when appropriate&#10;Tell the truth even when it stings" required></textarea>
+            </div>
+            <div class="field">
+              <label for="dontList">What you DON'T do <span class="req">*</span></label>
+              <p class="helper">What's out of scope? What would make you cringe? Your don'ts are as powerful as your dos.</p>
+              <textarea id="dontList" name="dontList" rows="6" placeholder="Generic templates&#10;Work with people who want to play small&#10;Pretend everything is fine&#10;Pastel everything&#10;Charge poverty rates" required></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="superpower">Your superpower <span class="req">*</span></label>
+            <p class="helper">One sentence. What is the thing you do better than almost anyone? Start with "I have an uncanny ability to…" or "My superpower is…"</p>
+            <textarea id="superpower" name="superpower" rows="2" placeholder="e.g. My superpower is being able to hear what someone isn't saying and reflect it back in a way that makes them cry and laugh at the same time." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="archnemesis">Your archnemesis <span class="req">*</span></label>
+            <p class="helper">What are you fighting against? What's the thing in your industry, the world, or your clients' lives that you are trying to fix or disrupt? This could be a belief, a behaviour, a broken system.</p>
+            <textarea id="archnemesis" name="archnemesis" rows="3" placeholder="e.g. The idea that you have to choose between success and authenticity. The culture of hustle that tells women they're not working hard enough when really they're working wrong." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="brandPersonality">6 brand personality traits <span class="req">*</span></label>
+            <p class="helper">Comma-separated adjectives. These describe how your brand feels. Mix warm with sharp, soft with bold — the best brands have texture.</p>
+            <input type="text" id="brandPersonality" name="brandPersonality" placeholder="e.g. fierce, tender, razor-sharp, playful, grounded, irreverent" required />
+          </div>
+
+          <div class="field">
+            <label for="brandReputation">What do people say about working with you?</label>
+            <p class="helper">What do your best clients say — in their own words — about the experience of working with you? Real testimonials or paraphrased are both great.</p>
+            <textarea id="brandReputation" name="brandReputation" rows="4" placeholder="She sees things in me I couldn't see in myself.&#10;Working with her felt like finally exhaling.&#10;She doesn't let you off the hook and you love her for it."></textarea>
+          </div>
+
+          <div class="step-nav">
+            <button type="button" class="btn-secondary" data-back="3">← Back</button>
+            <button type="button" class="btn-primary" data-next="5">Next: Your People →</button>
+          </div>
+        </fieldset>
+
+
+        <!-- ============================================================
+             STEP 5: YOUR PEOPLE
+             ============================================================ -->
+        <fieldset class="step step-5" data-step="5">
+          <legend class="step-legend">Step 5 · Your People</legend>
+          <p class="step-intro">The people whose lives you want to transform with your work. The more specific you are here, the better your whole strategy becomes.</p>
+
+          <div class="field">
+            <label for="idealClient">Describe your ideal client <span class="req">*</span></label>
+            <p class="helper">3–6 sentences in your own words. Her age, life stage, personality, what she's struggling with, what she's secretly hoping for. Write like you're describing a real person you love working with.</p>
+            <textarea id="idealClient" name="idealClient" rows="6" placeholder="She's in her late 30s to mid-40s, usually in a transition — a pivot, a rebrand, a business that's grown and no longer fits. She's smart and accomplished and has tried all the templates and frameworks. She knows what she wants but doesn't yet have the words for it. She's ready to be seen but scared of getting it wrong." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="clientDemographics">Their demographics</label>
+            <p class="helper">Optional — fill in what's relevant. Age range, location, profession, relationship status, how they use social media.</p>
+            <textarea id="clientDemographics" name="clientDemographics" rows="3" placeholder="Age: 35–52&#10;Location: Australia, UK, US — English-speaking&#10;Profession: Service business owner, coach, consultant, creative&#10;Social: Instagram and LinkedIn primarily"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="clientChallenges">Their biggest challenges <span class="req">*</span></label>
+            <p class="helper">What are they struggling with that brings them to you? Be specific. What keeps them up at night?</p>
+            <textarea id="clientChallenges" name="clientChallenges" rows="4" placeholder="She's attracting the wrong clients and doesn't know why.&#10;Her brand doesn't look or sound like her anymore.&#10;She's been playing it safe and her content is as beige as her website.&#10;She's exhausted by trying to be consistent on social with no clear strategy." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="clientMotivations">What they really want</label>
+            <p class="helper">What do they dream of? What's the transformation they're hoping for? Go deeper than the surface desire.</p>
+            <textarea id="clientMotivations" name="clientMotivations" rows="4" placeholder="To feel like themselves again in their business.&#10;To have a brand that makes people stop scrolling.&#10;To attract clients who actually get her and pay what she's worth.&#10;To feel proud to show people her website."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="clientQuotes">Real client quotes <span class="req">*</span></label>
+            <p class="helper">3–5 quotes your clients have said (or would say) about what they're going through. Verbatim is gold. These words will anchor your entire voice.</p>
+            <textarea id="clientQuotes" name="clientQuotes" rows="5" placeholder="I feel like I've been hiding and I don't know how to come out.&#10;I keep starting over from scratch and never finishing.&#10;I know I'm good at what I do — I just don't know how to say it." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="clientObjections">Potential objections</label>
+            <p class="helper">What stops them from saying yes? Time, money, confidence, trust? How do you address these?</p>
+            <textarea id="clientObjections" name="clientObjections" rows="3" placeholder="I can't afford it right now.&#10;I've tried this kind of thing before and it didn't stick.&#10;I'm not sure I'm ready — I need to fix X first."></textarea>
+          </div>
+
+          <div class="step-nav">
+            <button type="button" class="btn-secondary" data-back="4">← Back</button>
+            <button type="button" class="btn-primary" data-next="6">Next: Brand &amp; Offers →</button>
+          </div>
+        </fieldset>
+
+
+        <!-- ============================================================
+             STEP 6: BRAND + OFFERS
+             ============================================================ -->
+        <fieldset class="step step-6" data-step="6">
+          <legend class="step-legend">Step 6 · Brand + Offers</legend>
+
+          <div class="field">
+            <label for="currentOffers">Your current or planned offers <span class="req">*</span></label>
+            <p class="helper">List your main offers — one per line. Include a brief description and pricing if you have it. If you're just starting, list what you're planning.</p>
+            <textarea id="currentOffers" name="currentOffers" rows="6" placeholder="1:1 Brand Strategy Intensive — half day, $1,500&#10;Brand & Content package — 3 months, includes strategy + 12 weeks of content support, $4,800&#10;Brand Kickstart Workshop — group, 3 hours, $297&#10;The Brand Lab — monthly membership, $97/month" required></textarea>
+          </div>
+
+          <div class="field">
+            <label>Where are you right now? <span class="req">*</span></label>
+            <p class="helper">This shapes your 90-day plan.</p>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="startingPoint" value="starting" required />
+                <span><strong>Just starting out</strong> — building from scratch, no existing brand yet</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="startingPoint" value="misaligned" />
+                <span><strong>Have a brand but it doesn't feel right</strong> — something's off, it doesn't feel like me</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="startingPoint" value="established" />
+                <span><strong>Established brand, ready to level up</strong> — brand is solid, want to elevate and grow</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="startingPoint" value="pivoting" />
+                <span><strong>Rebranding after a pivot</strong> — my work has evolved and my brand needs to catch up</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="voiceAdjectives">6 adjectives that describe your brand voice <span class="req">*</span></label>
+            <p class="helper">Comma-separated. How do you want to sound? Pick a mix — not all soft, not all sharp. The best brands have texture.</p>
+            <input type="text" id="voiceAdjectives" name="voiceAdjectives" placeholder="e.g. warm, perceptive, direct, witty, quietly fierce, unapologetic" required />
+          </div>
+
+          <div class="field">
+            <label for="keyMessages">Key messages you want to be known for</label>
+            <p class="helper">What's the one thing you wish everyone understood about your work? What do you find yourself saying over and over?</p>
+            <textarea id="keyMessages" name="keyMessages" rows="4" placeholder="That strategy without soul doesn't work.&#10;That the most magnetic brands are just the most honest ones.&#10;That getting visible isn't about doing more — it's about doing you."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="existingTagline">Existing tagline or favourite phrases</label>
+            <p class="helper">If you already have a tagline or phrases you love, share them here. If not, no worries — we'll create them for you.</p>
+            <input type="text" id="existingTagline" name="existingTagline" placeholder="e.g. 'Strategy that sounds like you.'" />
+          </div>
+
+          <div class="step-nav">
+            <button type="button" class="btn-secondary" data-back="5">← Back</button>
+            <button type="button" class="btn-primary" data-next="7">Next: Your Story →</button>
+          </div>
+        </fieldset>
+
+
+        <!-- ============================================================
+             STEP 7: BRAND STORY
+             ============================================================ -->
+        <fieldset class="step step-7" data-step="7">
+          <legend class="step-legend">Step 7 · Your Brand Story</legend>
+          <p class="step-intro">The story of how you got here, where you're going, and who you're doing it with. This feeds your Brand Story, your Origin Story, and your future vision.</p>
+
+          <div class="field">
+            <label for="pastAchievements">5 of your most memorable achievements <span class="req">*</span></label>
+            <p class="helper">What are you most proud of in your work? What have you created, built, overcome, or been recognised for? These become the proof points in your story.</p>
+            <textarea id="pastAchievements" name="pastAchievements" rows="7" placeholder="1. Built my coaching practice from zero to $12k/month in 18 months while raising two kids solo.&#10;2. Was invited to speak at a national women in business conference.&#10;3. Had a client message me saying my work literally changed her life — her words.&#10;4. Walked away from a $90k corporate job to go all in on this.&#10;5. Created my signature framework that I'm now known for." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="futureGoals">5 goals or aspirations for the future <span class="req">*</span></label>
+            <p class="helper">Where are you going? What does your future brand look like in 3–5 years? Dream big — this is your north star.</p>
+            <textarea id="futureGoals" name="futureGoals" rows="7" placeholder="1. Be recognised as one of the top brand strategists for women in Australia.&#10;2. Speak on international stages about authentic brand building.&#10;3. Write a book on brand archetypes.&#10;4. Host retreats in Europe with 15 women at a time.&#10;5. Build a team and step into a CEO role." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="brandStoryOwn">Your brand story in your own words</label>
+            <p class="helper">Optional but wonderful — tell us how you got here. What happened that led you to this work? The messier the better. This becomes the raw material for your brand story.</p>
+            <textarea id="brandStoryOwn" name="brandStoryOwn" rows="8" placeholder="I spent 12 years in corporate marketing, killing it on paper, dying inside. I kept building brands for other people and wondering why I couldn't figure out my own. Then I got fired — best thing that ever happened to me. I spent six months just figuring out who I was without a job title. What came out of that is what I now teach…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="brandPosse">Your dream brand posse</label>
+            <p class="helper">Who are you being compared to? Who would be your dream collaborators? What books do your clients also read? What podcasts do they listen to? This helps us position you in the right neighbourhood.</p>
+            <textarea id="brandPosse" name="brandPosse" rows="4" placeholder="My clients also love Brené Brown, Denise Duffield-Thomas, James Wedmore.&#10;My podcast is like a cross between Conan O'Brien Needs a Friend and How I Built This.&#10;My dream collab is a retreat with Elizabeth Gilbert and Danielle LaPorte."></textarea>
+          </div>
+
+          <div class="step-nav">
+            <button type="button" class="btn-secondary" data-back="6">← Back</button>
+            <button type="submit" class="btn-primary btn-generate">Generate my Brand Strategy ✦</button>
+          </div>
+        </fieldset>
+
+      </form>
+
+      <div class="save-bar">
+        <button type="button" id="btn-save-progress" class="btn-link">💾 Save my progress and get a retrieval code</button>
+        <span id="autosave-indicator" class="autosave-indicator" hidden>✓ Auto-saved</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       LOADING VIEW
+       ============================================================ -->
+  <section id="view-loading" class="view">
+    <div class="container narrow loading-view">
+      <div class="loading-spinner"></div>
+      <h2>Building your Brand Strategy</h2>
+      <p class="muted" id="loading-message">Reading your archetype...</p>
+      <p class="muted small">This usually takes 60–90 seconds. Please don't close this window.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RESULTS VIEW
+       ============================================================ -->
+  <section id="view-results" class="view">
+    <div class="container">
+      <header class="results-header">
+        <div class="eyebrow">YOUR PERSONALISED BRAND STRATEGY</div>
+        <h1 id="results-title">Your Brand Kick Start</h1>
+        <p class="muted">Generated for <span id="results-name"></span> · <span id="results-archetype"></span></p>
+
+        <div class="results-actions">
+          <button type="button" id="btn-download-pdf" class="btn-primary">Download PDF</button>
+          <button type="button" id="btn-download-docx" class="btn-secondary">Download Word doc</button>
+          <button type="button" id="btn-save-results" class="btn-link">Save / share my retrieval code</button>
+        </div>
+
+        <div id="retrieval-banner" class="retrieval-banner" hidden>
+          <p><strong>Your retrieval code:</strong> <span id="retrieval-display"></span></p>
+          <p class="small">Save this code. You can return anytime at this URL to view your strategy.</p>
+        </div>
+      </header>
+
+      <!-- Results are rendered here by app.js -->
+      <div id="results-content" class="results-content"></div>
+
+      <footer class="results-footer">
+        <p>Ready to take your brand further? <a href="https://www.flourishonline.com.au/services" target="_blank" rel="noopener">Explore working with Flourish Online →</a></p>
+      </footer>
+    </div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>

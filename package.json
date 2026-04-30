@@ -1,0 +1,11 @@
+{
+  "name": "fo-brand-kickstart",
+  "version": "2.0.0",
+  "description": "Flourish Online Brand Archetype Kick Start Generator",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0",
+    "@vercel/kv": "^2.0.0",
+    "docx": "^8.5.0"
+  }
+}
