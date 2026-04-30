@@ -1002,6 +1002,174 @@ fieldset.step.active {
   max-width: 800px;
 }
 
+/* =========================================================
+   ARCHETYPE HERO SECTION
+   ========================================================= */
+.archetype-hero-section {
+  background: var(--dark-emerald);
+  border-color: var(--dark-emerald);
+  color: var(--cream);
+  padding: 48px;
+}
+
+.archetype-hero-inner {
+  max-width: 100%;
+}
+
+.archetype-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--hot-pink);
+  margin-bottom: 16px;
+}
+
+.archetype-combo-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Archetype badges */
+.archetype-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.archetype-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.archetype-badge.primary {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+.archetype-badge.secondary {
+  background: var(--magenta);
+  color: var(--white);
+}
+
+.archetype-badge.shadow {
+  background: var(--wine);
+  color: rgba(255,255,255,0.9);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.badge-role {
+  font-weight: 400;
+  opacity: 0.8;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.archetype-summary {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 32px;
+  border-left: 3px solid var(--hot-pink);
+  padding-left: 20px;
+}
+
+/* Individual archetype detail blocks */
+.archetype-detail-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.archetype-detail-block {
+  padding: 20px 24px;
+  border-left: 3px solid transparent;
+}
+
+.archetype-detail-block p {
+  margin-bottom: 0;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+}
+
+.archetype-detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.primary-block {
+  background: rgba(190, 22, 80, 0.15);
+  border-left-color: var(--crimson);
+}
+.primary-block .archetype-detail-label { color: #f08098; }
+
+.secondary-block {
+  background: rgba(204, 26, 140, 0.12);
+  border-left-color: var(--magenta);
+}
+.secondary-block .archetype-detail-label { color: #e87fd4; }
+
+.shadow-block {
+  background: rgba(87, 0, 33, 0.3);
+  border-left-color: rgba(255,255,255,0.3);
+}
+.shadow-block .archetype-detail-label { color: rgba(255,255,255,0.6); }
+
+/* In action + watchouts */
+.archetype-in-action,
+.archetype-watchouts {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.archetype-subheading {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hot-pink);
+  margin-bottom: 14px;
+}
+
+.archetype-hero-section ul {
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.archetype-hero-section li {
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.archetype-watchouts li {
+  color: rgba(255,200,150,0.9);
+}
+
+@media (max-width: 600px) {
+  .archetype-hero-section {
+    padding: 28px 20px;
+  }
+}
+
 /* Result section cards */
 .result-section {
   background: var(--white);

@@ -853,6 +853,11 @@ function renderResults() {
   const container = document.getElementById('results-content');
   container.innerHTML = '';
 
+  // ── Section 0: Archetype Profile (hero section, dark styling) ──
+  if (r.archetypeProfile) {
+    container.appendChild(makeArchetypeSection(r));
+  }
+
   // ── Section 1: Brand Foundation ─────────────────────────
   container.appendChild(makeSection('1 · Brand Foundation', buildBrandFoundationHtml(r)));
 
@@ -894,6 +899,80 @@ function makeSection(title, innerHtml) {
   const section = document.createElement('section');
   section.className = 'result-section';
   section.innerHTML = `<h2 class="result-section-title">${escapeHtml(title)}</h2>${innerHtml}`;
+  return section;
+}
+
+function makeArchetypeSection(r) {
+  const ap = r.archetypeProfile;
+  const mainArchetype = state.formData.archetypeMain || '';
+  const secondary = state.formData.archetypeSecondary && state.formData.archetypeSecondary !== 'None / not sure yet'
+    ? state.formData.archetypeSecondary : null;
+  const shadow = state.formData.archetypeShadow && state.formData.archetypeShadow !== 'None / not sure yet'
+    ? state.formData.archetypeShadow : null;
+
+  // Build archetype badges
+  const badges = `
+    <div class="archetype-badges">
+      <span class="archetype-badge primary">${escapeHtml(mainArchetype)} <span class="badge-role">Primary</span></span>
+      ${secondary ? `<span class="archetype-badge secondary">${escapeHtml(secondary)} <span class="badge-role">Secondary</span></span>` : ''}
+      ${shadow ? `<span class="archetype-badge shadow">${escapeHtml(shadow)} <span class="badge-role">Shadow</span></span>` : ''}
+    </div>
+  `;
+
+  const inActionItems = (ap.archetypeInAction || [])
+    .map(item => `<li>${escapeHtml(item)}</li>`).join('');
+
+  const watchOuts = (ap.watchOuts || [])
+    .map(item => `<li>${escapeHtml(item)}</li>`).join('');
+
+  const primaryBlock = ap.primaryInBrand
+    ? `<div class="archetype-detail-block primary-block">
+        <div class="archetype-detail-label">${escapeHtml(mainArchetype)} — Primary Archetype</div>
+        <p>${escapeHtml(ap.primaryInBrand)}</p>
+       </div>` : '';
+
+  const secondaryBlock = secondary && ap.secondaryInBrand
+    ? `<div class="archetype-detail-block secondary-block">
+        <div class="archetype-detail-label">${escapeHtml(secondary)} — Secondary Archetype</div>
+        <p>${escapeHtml(ap.secondaryInBrand)}</p>
+       </div>` : '';
+
+  const shadowBlock = shadow && ap.shadowInBrand
+    ? `<div class="archetype-detail-block shadow-block">
+        <div class="archetype-detail-label">${escapeHtml(shadow)} — Shadow Archetype</div>
+        <p>${escapeHtml(ap.shadowInBrand)}</p>
+       </div>` : '';
+
+  const section = document.createElement('section');
+  section.className = 'result-section archetype-hero-section';
+  section.innerHTML = `
+    <div class="archetype-hero-inner">
+      <div class="archetype-eyebrow">YOUR ARCHETYPE PROFILE</div>
+      <h2 class="archetype-combo-title">${escapeHtml(ap.combinationTitle || mainArchetype)}</h2>
+      ${badges}
+      <p class="archetype-summary">${escapeHtml(ap.combinationSummary || '')}</p>
+
+      <div class="archetype-detail-blocks">
+        ${primaryBlock}
+        ${secondaryBlock}
+        ${shadowBlock}
+      </div>
+
+      ${inActionItems ? `
+        <div class="archetype-in-action">
+          <h4 class="archetype-subheading">Your archetype combination in action</h4>
+          <ul>${inActionItems}</ul>
+        </div>
+      ` : ''}
+
+      ${watchOuts ? `
+        <div class="archetype-watchouts">
+          <h4 class="archetype-subheading">Things to watch for</h4>
+          <ul>${watchOuts}</ul>
+        </div>
+      ` : ''}
+    </div>
+  `;
   return section;
 }
 
