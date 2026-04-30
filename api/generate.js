@@ -219,65 +219,87 @@ BRAND STORY (their words): ${fd.brandStoryOwn || ''}
 DREAM BRAND POSSE: ${fd.brandPosse || ''}
 
 ==================================================
-YOUR TASK
+YOUR TASK — READ THIS CAREFULLY
 ==================================================
 
-Generate a complete brand strategy. Be specific, personal, and draw directly from their inputs. Write in the voice of their archetype — ${archetypeData.voice}. Reference their actual words back to them where possible.
+Generate a complete brand strategy. Be specific, personal, and draw directly from their inputs.
+
+ARCHETYPE INTEGRATION RULES — THIS IS CRITICAL:
+- The ${mainArchetype} archetype is not just background context. It must visibly shape the language, tone, framing and specific word choices in EVERY section.
+- Name the archetypes explicitly in the archetypeProfile section and reference them naturally (not forcibly) in brandFoundation, weird, loveFactor, brandStory, socialBio, and contentPillars.
+- The ${mainArchetype} voice (${archetypeData.voice}) must be audible throughout. Someone reading this strategy should be able to feel which archetype it was built for.
+${secondaryArchetype ? `- The ${secondaryArchetype} secondary archetype adds ${(ARCHETYPES[secondaryArchetype]||{}).voice||''} to the mix — this should show up as a modifier in voice, offers, and content pillars.` : ''}
+${shadowArchetype ? `- The ${shadowArchetype} shadow archetype gives this brand its edge and depth — reference it when describing what makes the brand surprising, complex, or magnetic.` : ''}
+- Every tagline option should be audibly ${mainArchetype} in its energy.
+- The 90-day plan should reflect how a ${mainArchetype} would naturally build momentum (not a generic checklist).
 
 IMPORTANT: Return ONLY a valid JSON object. No markdown, no preamble, no explanation. Just the JSON.
 
 Use this exact structure:
 
 {
+  "archetypeProfile": {
+    "combinationTitle": "A memorable 3-6 word title for this specific archetype blend — e.g. 'The Fierce Nurturer', 'The Visionary Sage', 'The Wild Alchemist'. Make it feel like a brand identity in itself.",
+    "combinationSummary": "3-4 sentences explaining what this specific archetype combination creates. How do the main${secondaryArchetype ? ', secondary' : ''}${shadowArchetype ? ' and shadow' : ''} archetypes interact and amplify each other? What does this combination make possible that a single archetype couldn't? Be specific about the blend — don't describe each archetype in isolation.",
+    "primaryInBrand": "2-3 sentences on exactly how the ${mainArchetype} archetype shows up in THIS person's brand, based on their specific inputs. Reference their actual work, their words, their offers. Not generic archetype description — specific to them.",
+    ${secondaryArchetype ? `"secondaryInBrand": "2-3 sentences on how the ${secondaryArchetype} secondary archetype modifies or layers onto the primary. What new dimension does it add to this specific brand? Where does it show up most strongly?",` : '"secondaryInBrand": null,'}
+    ${shadowArchetype ? `"shadowInBrand": "2-3 sentences on how the ${shadowArchetype} shadow archetype gives this brand its edge, complexity, or unexpected quality. What makes this brand surprising or magnetic because of this shadow?",` : '"shadowInBrand": null,'}
+    "archetypeInAction": [
+      "6 highly specific, practical ways this archetype blend shows up in day-to-day brand decisions — content tone, offer design, client interactions, visual choices, language patterns. Each one should be actionable and specific to this combination, not generic."
+    ],
+    "watchOuts": [
+      "3 things to watch for given this archetype mix — tendencies that can undermine brand consistency or client attraction if not managed. Be direct and honest."
+    ]
+  },
   "brandFoundation": {
-    "why": "A polished, powerful 2-3 sentence Why statement that distils their inputs and sounds like them. Make it bold and aligned with the ${mainArchetype} archetype.",
-    "vision": "A vivid 2-3 sentence Vision statement. Future-focused, inspiring, archetype-aligned.",
-    "mission": "A clear 1-2 sentence Mission statement. Present-tense, action-oriented."
+    "why": "A polished, powerful 2-3 sentence Why statement that distils their inputs and unmistakably sounds like a ${mainArchetype}. Make it bold, specific, and archetype-aligned — someone should be able to feel the ${mainArchetype} energy in the language.",
+    "vision": "A vivid 2-3 sentence Vision statement. Future-focused, inspiring, shaped by the ${mainArchetype} worldview.",
+    "mission": "A clear 1-2 sentence Mission statement. Present-tense, action-oriented, with the ${mainArchetype} voice audible."
   },
   "values": {
     "core3": ["value1", "value2", "value3"],
     "top10": ["value1", "value2", "value3", "value4", "value5", "value6", "value7", "value8", "value9", "value10"],
     "coreValueStatements": [
-      "A bold, brand-specific statement for core value 1 — not generic, pulls from their work and archetype",
-      "A bold, brand-specific statement for core value 2",
-      "A bold, brand-specific statement for core value 3"
+      "A bold, specific statement for core value 1 — rooted in their work AND their ${mainArchetype} archetype. Not generic. Pull from their actual inputs.",
+      "A bold, specific statement for core value 2 — same rules.",
+      "A bold, specific statement for core value 3 — same rules."
     ]
   },
   "weird": {
-    "uniqueness": "2-3 sentences articulating what makes this brand distinctly them. Pull from their inputs, make it specific and ownable.",
-    "doList": ["5-7 specific items from their do list, refined and sharpened"],
-    "dontList": ["5-7 specific items from their don't list, refined and sharpened"],
-    "superpower": "Their superpower in one punchy sentence. Start with 'My superpower is...' or similar.",
-    "archnemesisName": "A name for their archnemesis — a 2-4 word label for what they're fighting",
-    "archnemesisDescription": "2-3 sentences about the archnemesis — what it is, why it's harmful, and how this brand fights it. Make it vivid and specific.",
-    "brandPersonality": ["6 personality traits refined from their input — each 1-3 words, mix warm and sharp"]
+    "uniqueness": "2-3 sentences on what makes this brand distinctly theirs. Reference the archetype combination explicitly — e.g. 'The combination of [Primary] and [Secondary] means...' Pull from their specific inputs.",
+    "doList": ["5-7 specific items refined from their do list — sharpened through the lens of their archetype"],
+    "dontList": ["5-7 specific items refined from their don't list — these should feel like natural ${mainArchetype} boundaries"],
+    "superpower": "Their superpower in one punchy sentence that sounds like a ${mainArchetype}. Start with 'My superpower is...' or similar.",
+    "archnemesisName": "A vivid 2-4 word name for what they fight — make it feel like something a ${mainArchetype} would name their enemy",
+    "archnemesisDescription": "2-3 sentences — what it is, why it's harmful, and how this brand's archetype combination is uniquely positioned to fight it.",
+    "brandPersonality": ["6 personality traits refined from their input — mix traits from their adjectives AND their archetype's natural qualities"]
   },
   "loveFactor": {
-    "whyPeopleChoose": "2-3 sentences on why clients choose this specific person over others. Pull from their unique positioning.",
-    "experience": "2-3 sentences describing what it actually feels like to work with this person. Sensory, specific, archetype-aligned.",
-    "languageFeel": "A few sentences describing how their language and communication style feels to clients. Use their own adjectives.",
-    "brandExperience": "A few sentences on the overall brand experience — what makes every touchpoint feel consistent and them."
+    "whyPeopleChoose": "2-3 sentences on why clients choose this person. Explicitly connect this to their archetype — e.g. 'People come to [name] because they're looking for a [archetype quality]...'",
+    "experience": "2-3 sentences describing what it feels like to work with this person. Should be unmistakably ${mainArchetype} in its sensory quality.",
+    "languageFeel": "A few sentences on how their language feels. Reference the archetype voice: ${archetypeData.voice}.",
+    "brandExperience": "A few sentences on the overall brand experience — what makes it consistent and distinctly ${mainArchetype}."
   },
   "idealClient": {
-    "name": "A memorable name/title for their dream client — e.g. 'The Ready-to-Rise Entrepreneur'",
-    "description": "A rich 4-6 sentence portrait of the ideal client — personality, life stage, desires, challenges. Use the client's own language where possible.",
+    "name": "A memorable title for their dream client — e.g. 'The Ready-to-Rise Entrepreneur'",
+    "description": "A rich 4-6 sentence portrait. Use the client's own language. Note why this specific client is drawn to a ${mainArchetype} brand in particular.",
     "demographics": "A clear demographics paragraph — age, location, profession, tech habits, relationship status as relevant.",
-    "challenges": ["4-6 specific challenges this client faces — use the client's own language where possible"],
-    "motivations": ["4-6 deep desires and motivations — go beyond the surface"],
+    "challenges": ["4-6 specific challenges — use the client's own language where possible"],
+    "motivations": ["4-6 deep desires — go beyond surface. Include at least one that's specifically about wanting the ${mainArchetype} quality in a service provider."],
     "realQuotes": ["3-5 real-sounding client quotes from their input or extrapolated from them"],
-    "objectionResponse": "2-3 sentences on the main objections and how this brand addresses them with confidence.",
-    "marketingMessages": ["4-6 powerful marketing messages specific to this brand and client — not generic"]
+    "objectionResponse": "2-3 sentences on main objections and how this brand — as a ${mainArchetype} — addresses them.",
+    "marketingMessages": ["4-6 powerful marketing messages — each one should have the ${mainArchetype} voice audible"]
   },
   "taglines": [
-    "Tagline option 1 — short, punchy, archetype-aligned",
-    "Tagline option 2 — different angle, slightly longer",
-    "Tagline option 3 — question or provocation format",
-    "Tagline option 4 — benefit-led",
-    "Tagline option 5 — most daring option"
+    "Tagline option 1 — short and unmistakably ${mainArchetype} in energy",
+    "Tagline option 2 — different angle, slightly longer, still archetype-aligned",
+    "Tagline option 3 — a question or provocation in the ${mainArchetype} voice",
+    "Tagline option 4 — benefit-led but with ${mainArchetype} flavour",
+    "Tagline option 5 — the boldest, most distinctly ${mainArchetype} option"
   ],
   "messaging": {
-    "valueProposition": "2-3 sentences. What makes this business genuinely different and valuable. Be specific — not 'I help you grow your business' but the specific transformation they create.",
-    "elevatorPitch": "A 3-4 sentence elevator pitch that would make someone say 'tell me more.' Start with the problem, move to the transformation, land on what makes them different."
+    "valueProposition": "2-3 sentences. What makes this business genuinely different — specifically because of WHO this person is and which archetype they embody. Mention the archetype quality implicitly or explicitly.",
+    "elevatorPitch": "A 3-4 sentence pitch. Start with the problem the ${mainArchetype} is built to solve, move to the transformation, land on what makes them different. Should sound exactly like a ${mainArchetype} said it."
   },
   "brandVoice": {
     "voiceChart": [
@@ -300,39 +322,39 @@ Use this exact structure:
         "notThis": "What this means they are NOT"
       },
       {
-        "value": "Archetype quality (${mainArchetype})",
-        "voice": "How the archetype shapes their voice",
-        "means": "What this looks like in their content and copy",
-        "notThis": "What this brand is emphatically NOT"
+        "value": "${mainArchetype} Archetype${secondaryArchetype ? ' + ' + secondaryArchetype : ''}",
+        "voice": "The specific voice quality that comes from this archetype combination",
+        "means": "What this archetype blend looks like in their content, copy and client communication",
+        "notThis": "What this brand is emphatically NOT — what the ${mainArchetype} avoids: ${archetypeData.avoids}"
       }
     ],
-    "verbs": ["8-10 action verbs that sound like this brand — pulled from their language and archetype"],
-    "keywords": ["10-12 power words and phrases specific to this brand and niche"],
-    "buttonCopy": ["6-8 CTA button ideas — avoid generic 'Click here', make them specific to this brand voice"]
+    "verbs": ["8-10 action verbs that sound like this brand — pulled from their language AND their archetype's natural energy: ${archetypeData.voice}"],
+    "keywords": ["10-12 power words and phrases specific to this brand, niche, and archetype"],
+    "buttonCopy": ["6-8 CTA ideas — each one should sound like a ${mainArchetype} wrote it, not a generic marketer"]
   },
-  "brandStory": "A full 3-5 paragraph brand story written in third person. Pull from their past achievements, pivot points, and future vision. Make it compelling, specific, and archetype-aligned. This should feel like the 'About' page of a world-class brand.",
+  "brandStory": "A full 3-5 paragraph brand story in third person. Pull from their past achievements, pivot points and future vision. The narrative arc should reflect the ${mainArchetype} journey — not just what they did, but HOW they moved through the world. The writing itself should have the ${mainArchetype} voice. This should feel like the About page of a world-class brand.",
   "socialBio": {
-    "short": "A 2-3 sentence Instagram/TikTok bio that grabs attention, says what they do clearly, and sounds exactly like their archetype. Under 150 characters ideally.",
-    "long": "A 3-4 paragraph LinkedIn/website bio. Warm opening, clear positioning, social proof from their achievements, compelling close with a call to action. Write it in first person."
+    "short": "A 2-3 sentence Instagram/TikTok bio. It should be immediately, unmistakably ${mainArchetype} in energy. Someone who knows the archetypes should be able to guess which one just from reading it.",
+    "long": "A 3-4 paragraph LinkedIn/website bio. Warm opening, clear positioning, social proof from their achievements, compelling close with a CTA. Written in first person with the ${mainArchetype} voice running all the way through."
   },
   "contentPillars": [
     {
-      "pillar": "Pillar 1 name — something specific to this brand, not generic",
-      "description": "2-3 sentences on what this pillar covers and why it's perfect for this brand and audience.",
-      "postIdeas": ["8-10 specific post ideas for this pillar — not vague, actually usable"]
+      "pillar": "Pillar 1 name — specific to this brand and archetype, not generic. Should feel like something only a ${mainArchetype} would name it.",
+      "description": "2-3 sentences on what this pillar covers, why it's perfect for this brand and audience, and how it expresses the ${mainArchetype} energy.",
+      "postIdeas": ["8-10 specific, usable post ideas — written in the ${mainArchetype} voice, not generic"]
     },
     {
-      "pillar": "Pillar 2 name",
+      "pillar": "Pillar 2 name — archetype-specific",
+      "description": "2-3 sentences — including how this pillar channels the archetype combination",
+      "postIdeas": ["8-10 specific post ideas in the ${mainArchetype} voice"]
+    },
+    {
+      "pillar": "Pillar 3 name — archetype-specific",
       "description": "2-3 sentences",
       "postIdeas": ["8-10 specific post ideas"]
     },
     {
-      "pillar": "Pillar 3 name",
-      "description": "2-3 sentences",
-      "postIdeas": ["8-10 specific post ideas"]
-    },
-    {
-      "pillar": "Pillar 4 name",
+      "pillar": "Pillar 4 name — archetype-specific",
       "description": "2-3 sentences",
       "postIdeas": ["8-10 specific post ideas"]
     }
@@ -364,7 +386,7 @@ Use this exact structure:
     "refinements": ["5-7 specific, actionable suggestions for improving or refining their offers — name things that need changing, not vague suggestions"]
   },
   "ninetyDayPlan": {
-    "intro": "A 2-3 sentence personalised intro to their 90-day plan based on where they are (${fd.startingPoint || 'their current stage'}). Make it motivating and specific.",
+    "intro": "A 2-3 sentence personalised intro based on where they are (${fd.startingPoint || 'their current stage'}). Frame the 90 days through the lens of the ${mainArchetype} — how does a ${mainArchetype} build momentum? What's their natural rhythm and approach?",
     "weeks": [
       { "theme": "Week 1-2: [specific theme]", "tasks": ["4-6 specific, actionable tasks for this fortnight"] },
       { "theme": "Week 3-4: [specific theme]", "tasks": ["4-6 specific, actionable tasks"] },
